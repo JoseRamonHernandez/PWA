@@ -26,3 +26,15 @@ self.addEventListener('activate', event => {
 
     console.log('SW2: Activo y listo para controlar la app');
 });
+
+//Fetch: manejo de peticiones http
+self.addEventListener('fetch', event => {
+    //Aplicar estrategias del cache
+    console.log('SW: ', event.request.url);
+
+    if (event.request.url.includes('https://regres.in/'))
+    {
+        const resp = new Response (`{ ok: false, mensaje: 'jsjsjs'}`);
+        event.respondWith( resp );
+    }
+});
