@@ -38,3 +38,18 @@ self.addEventListener('fetch', event => {
         event.respondWith( resp );
     }
 });
+
+//SYNC: Recuperamos la conexión a internet
+self.addEventListener('sync', event => 
+{
+    console.log('Tenemos conexión!');
+    console.log(event);
+    console.log(event.tag);
+});
+
+
+//PUSH: Manejar las push notifications
+self.addEventListener('push', event => 
+{
+    console.log('Notificacion recibida');
+});
